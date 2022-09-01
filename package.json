@@ -1,0 +1,90 @@
+{
+  "name": "learnstorybook-design-system",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Learn Storybook design system",
+  "main": "dist/index.js",
+  "repository": "https://github.com/chromaui/learnstorybook-design-system.git",
+  "author": "Tom Coleman <tom@thesnail.org>",
+  "license": "MIT",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "polished": "^4.1.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.3",
+    "styled-components": "^5.2.1",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "build": "cross-env BABEL_ENV=production babel src -d dist",
+    "test": "react-scripts test",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public",
+    "test-storybook": "test-storybook",
+    "build-storybook-docs": "build-storybook --docs",
+    "release": "auto shipit --base-branch=main"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
+  "babel": {
+    "presets": [
+      [
+        "react-app",
+        {
+          "absoluteRuntime": false
+        }
+      ]
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/preset-typescript": "^7.18.6",
+    "@storybook/addon-a11y": "^6.5.10",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/builder-webpack4": "^6.5.10",
+    "@storybook/jest": "^0.0.10",
+    "@storybook/manager-webpack4": "^6.5.10",
+    "@storybook/node-logger": "^6.5.10",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.5.10",
+    "@storybook/test-runner": "^0.5.0",
+    "@storybook/testing-library": "^0.0.13",
+    "auto": "^10.37.4",
+    "chromatic": "^6.7.4",
+    "cross-env": "^7.0.3",
+    "jest": "27",
+    "prettier": "^2.7.1"
+  }
+}
